@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HelloWorld" extends="Scene"> 
+
+  <script type="text/brightscript" uri = "pkg:/components/screensaver.brs"/>
+
+	<children>
+      <LayoutGroup
+        id="panorama"
+        LayoutDirection="horiz"
+        horizAlignment="left"
+      >
+
+        <Poster id="p1"
+          width="720"
+          height="720"
+          uri="pkg:/images/panorama_0.webp"
+        />
+        <Poster id="p2"
+          width="720"
+          height="720"
+          translation="[0,0]"
+          uri="pkg:/images/panorama_1.webp"
+        />
+        <Poster id="p3"
+          width="720"
+          height="720"
+          translation="[0,0]"
+          uri="pkg:/images/panorama_2.webp"
+        />
+        <Poster id="p4"
+          width="720"
+          height="720"
+          translation="[0,0]"
+          uri="pkg:/images/panorama_3.webp"
+        />
+        <Poster id="r_p1"
+          width="720"
+          height="720"
+          uri="pkg:/images/panorama_0.webp"
+        />
+        <Poster id="r_p2"
+          width="720"
+          height="720"
+          translation="[0,0]"
+          uri="pkg:/images/panorama_1.webp"
+        />
+      </LayoutGroup>
+
+      <Animation
+        id="pano_slide"
+        duration="30"
+        repeat="true"
+        easeFunction="linear"
+      >
+        <Vector2DFieldInterpolator
+        id="translate"
+        key="[0.0,1.0]"
+        keyValue="[ [0.0, 0.0], [-2880.0, 0.0] ]"
+        fieldToInterp="panorama.translation"
+        />
+      </Animation>
+
+      <Audio
+        id="music_1"
+        loop="true"
+      >
+        <ContentNode
+          role="content"
+          url="https://cdn.discordapp.com/attachments/1107322908520493158/1180756236174630942/calm1.mp3"
+        />
+      </Audio>
+  </children>
+</component>
